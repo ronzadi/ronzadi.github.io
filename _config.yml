@@ -26,7 +26,7 @@ author:
   avatar           : "profile.png"
   name             : "Ron Zadicario"
   pronouns         :
-  bio              : "School of Computer Science and AI<br>Tel Aviv University"
+  bio              : "<span class='author__title'>PhD Student</span><br><span class='author__affiliation'>School of Computer Science and AI<br>Tel Aviv University</span>"
   location         :
   employer         :
   uri              :
