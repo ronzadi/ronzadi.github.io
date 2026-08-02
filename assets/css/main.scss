@@ -37,3 +37,27 @@
     "layout/sidebar",
     "layout/json_cv"
 ;
+
+/* ==========================================================================
+   CUSTOM OVERRIDES
+   ========================================================================== */
+
+/* Keep footer at the bottom in normal page flow */
+.page__footer {
+  position: static !important;
+  bottom: auto !important;
+  background-color: #f8f9fa !important; /* Clean light gray */
+  color: #6c757d !important;
+  padding: 1.5rem 0 !important;
+  border-top: 1px solid #e9ecef !important;
+}
+
+/* Footer links styling */
+.page__footer a {
+  color: #495057 !important;
+}
+
+/* Hide the "FOLLOW: RSS FEED" text line */
+.page__footer-follow {
+  display: none !important;
+}
