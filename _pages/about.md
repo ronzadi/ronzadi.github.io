@@ -8,7 +8,7 @@ redirect_from:
 
 Hello! I am a Ph.D. student in the Blavatnik School of Computer Science and AI at Tel Aviv University, advised by Prof. Tova Milo.
 
-I am broadly interested in data privacy and algorithm design. My current research focuses on privacy-preserving combinatorial optimization and its applications to data science and machine learning.
+I am broadly interested in data privacy and algorithm design. My current research focuses on privacy-preserving combinatorial optimization and its applications in data science and machine learning.
 
 Previously, I completed my M.Sc. in Computer Science at Tel Aviv University under the supervision of Prof. Amnon Ta-Shma, where I worked on pseudorandomness.
 
