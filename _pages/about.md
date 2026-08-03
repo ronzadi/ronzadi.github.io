@@ -1,6 +1,5 @@
 ---
 permalink: /
-title: "Ron Zadicario"
 author_profile: true
 redirect_from: 
   - /about/
