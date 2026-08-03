@@ -6,10 +6,11 @@ redirect_from:
   - /about.html
 ---
 
-Hello! I am a PhD student in Computer Science at Tel Aviv University, advised by Prof. Tova Milo. 
-My research focuses on **data privacy**, **combinatorial optimization**, and **data science**.
+Hello! I am a PhD student in Computer Science at Tel Aviv University, advised by Prof. Tova Milo.
 
-I am particularly interested in.....
+My research focuses on privacy-preserving combinatorial optimization and its applications to data science and machine learning.
+
+Previously, I completed my M.Sc. at Tel Aviv University, where I was advised by Prof. Amnon Ta-Shma and worked on pseudorandomness.
 
 
 ## Publications
