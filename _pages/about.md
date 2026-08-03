@@ -17,9 +17,8 @@ I am particularly interested in.....
 
 **Fast and Private Max-Sum Diversification**  
 Ron Zadicario, Tova Milo  
-*in VLDB 2026*
-
-[[arXiv]](https://arxiv.org/abs/2607.17196)
+*in VLDB 2026*<br>
+<a href="https://arxiv.org/..." target="_blank">[arXiv]</a>
 
 
 
