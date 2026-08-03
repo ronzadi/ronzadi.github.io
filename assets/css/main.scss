@@ -65,3 +65,64 @@
   color: #495057 !important;
   text-decoration: underline;
 }
+
+/* Center alignment for the whole sidebar card */
+.custom-author-profile {
+  text-align: center !important;
+}
+
+/* Name */
+.custom-author-profile .author__name {
+  font-size: 2rem !important;
+  font-weight: 500 !important;
+  color: #000000 !important;
+  margin-top: 10px !important;
+  margin-bottom: 6px !important;
+}
+
+/* Title (PhD Student) */
+.custom-author-profile .author__title {
+  font-size: 1.25rem !important;
+  color: #777777 !important; /* Muted gray */
+  margin: 0 0 6px 0 !important;
+  font-weight: 300 !important;
+}
+
+/* Affiliation */
+.custom-author-profile .author__affiliation {
+  font-size: 1.1rem !important;
+  line-height: 1.35 !important;
+  margin: 0 0 16px 0 !important;
+  color: #5164f4 !important; /* Signature blue color */
+}
+
+.custom-author-profile .author__affiliation a {
+  color: #5164f4 !important;
+  text-decoration: none !important;
+}
+
+.custom-author-profile .author__affiliation a:hover {
+  text-decoration: underline !important;
+}
+
+/* Horizontal Blue Icons Bar */
+.custom-author-profile .author__social-icons {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 12px !important;
+  margin-top: 10px !important;
+}
+
+/* Solid Blue Icons */
+.custom-author-profile .author__social-icons a {
+  font-size: 2.1rem !important;
+  color: #5164f4 !important; /* Matches icon shade in reference */
+  text-decoration: none !important;
+  transition: transform 0.15s ease;
+}
+
+.custom-author-profile .author__social-icons a:hover {
+  color: #3b4ed3 !important;
+  transform: scale(1.1);
+}
