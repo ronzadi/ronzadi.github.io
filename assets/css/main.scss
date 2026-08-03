@@ -1,121 +1,131 @@
+/* ==========================================================================
+   FORCE SINGLE-COLUMN OVERRIDE (FIXES GRID COLLAPSE)
+   ========================================================================== */
 
-/* 1. Global Page Canvas & Clean Body Text */
-body {
-  background-color: #fafafa !important;
-  color: #1a1a1a !important;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
-  line-height: 1.65;
+/* 1. Reset Theme Grid */
+#main {
+  max-width: 850px !important;
+  margin: 0 auto !important;
+  padding: 2rem 1rem !important;
+  display: block !important;
 }
 
-/* 2. Strip default heavy template sidebar styles */
 .sidebar {
-  background: transparent !important;
-  border: none !important;
-  box-shadow: none !important;
-  padding: 0 !important;
+  float: none !important;
   width: 100% !important;
+  margin: 0 0 2rem 0 !important;
+  padding: 0 !important;
+  position: static !important;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
-/* 3. Horizontal Header Layout */
+.archive, .page {
+  float: none !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+}
+
+.author__avatar img {
+  display: none !important; /* Hide template default avatar */
+}
+
+/* 2. Header Box Layout */
 .modern-profile-header {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  margin-bottom: 2rem;
-  padding-bottom: 1.75rem;
-  border-bottom: 1px solid #eaeaea;
-  flex-wrap: wrap;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  gap: 24px !important;
+  padding-bottom: 1.5rem !important;
+  margin-bottom: 2rem !important;
+  border-bottom: 1px solid #e5e7eb !important;
 }
 
 .headshot {
   width: 130px !important;
   height: 130px !important;
   border-radius: 50% !important;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  border: 2px solid #ffffff;
+  object-fit: cover !important;
+  display: block !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08) !important;
+}
+
+.meta-container {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
 }
 
 .author-name {
-  font-family: "Georgia", Cambria, serif !important;
-  font-size: 2.2rem !important;
+  font-family: "Georgia", serif !important;
+  font-size: 2.1rem !important;
   font-weight: 700 !important;
-  color: #000000 !important;
+  color: #111827 !important;
   margin: 0 0 4px 0 !important;
-  letter-spacing: -0.5px;
   border-bottom: none !important;
 }
 
 .author-title {
-  font-size: 1.05rem;
-  color: #333333;
-  margin: 0 0 2px 0;
-  font-weight: 500;
+  font-size: 1.05rem !important;
+  color: #374151 !important;
+  margin: 0 0 2px 0 !important;
+  font-weight: 500 !important;
 }
 
 .author-dept {
-  font-size: 0.95rem;
-  color: #666666;
-  margin: 0 0 10px 0;
+  font-size: 0.95rem !important;
+  color: #6b7280 !important;
+  margin: 0 0 8px 0 !important;
 }
 
-/* Monospace Email Display */
+/* 3. Inline Monospace Email Fix */
 .author-email {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin: 8px 0 14px 0;
-  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
-  font-size: 0.85rem;
-  color: #444444;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  margin: 6px 0 12px 0 !important;
+  font-family: monospace !important;
+  font-size: 0.88rem !important;
+  color: #4b5563 !important;
 }
 
-.author-email i {
-  color: #666666;
-}
-
-/* Modern Card Pills */
+/* 4. Rounded Button Pills */
 .pill-links {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  flex-wrap: wrap;
+  display: flex !important;
+  gap: 8px !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
 }
 
 .pill-item {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 38px;
-  height: 38px;
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
-  color: #333333 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 38px !important;
+  height: 38px !important;
+  background: #ffffff !important;
+  border: 1px solid #d1d5db !important;
+  border-radius: 8px !important;
+  color: #374151 !important;
   text-decoration: none !important;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
-  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04) !important;
+  transition: all 0.15s ease !-important;
 }
 
-.pill-item i {
-  font-size: 1.1rem;
-}
-
-/* Authentic Icon Colors */
-.pill-item.scholar i { color: #4285f4; }
-.pill-item.linkedin i { color: #0a66c2; }
-.pill-item.twitter i { color: #000000; }
-.pill-item.github i { color: #24292e; }
+.pill-item.scholar i { color: #4285f4 !important; }
+.pill-item.linkedin i { color: #0a66c2 !important; }
+.pill-item.twitter i { color: #000000 !important; }
+.pill-item.github i { color: #171515 !important; }
 
 .pill-item:hover {
-  border-color: #b0b0b0;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  background: #f9fafb !important;
+  border-color: #9ca3af !important;
+  transform: translateY(-1px) !important;
 }
 
 .bio-btn {
   width: auto !important;
-  padding: 0 14px;
-  font-weight: 600;
-  font-size: 0.85rem;
+  padding: 0 14px !important;
+  font-weight: 600 !important;
+  font-size: 0.85rem !important;
 }
