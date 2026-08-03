@@ -7,9 +7,9 @@
 <div class="modern-profile-header">
   <div class="avatar-container">
     {% if author.avatar contains "://" %}
-        <img src="{{ author.avatar }}" alt="{{ author.name }}" class="headshot" fetchpriority="high" />
+        <img src="{{ author.avatar }}" alt="{{ author.name }}" class="headshot" />
     {% else %}
-        <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="headshot" alt="{{ author.name }}" fetchpriority="high" />
+        <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="headshot" alt="{{ author.name }}" />
     {% endif %}
   </div>
 
@@ -25,25 +25,25 @@
 
     <div class="pill-links">
       {% if author.googlescholar %}
-        <a href="{{ author.googlescholar }}" class="pill-item scholar" title="Google Scholar" target="_blank" rel="noopener">
+        <a href="{{ author.googlescholar }}" class="pill-item scholar" target="_blank" rel="noopener">
           <i class="ai ai-google-scholar"></i>
         </a>
       {% endif %}
 
       {% if author.twitter %}
-        <a href="https://x.com/{{ author.twitter }}" class="pill-item twitter" title="X (Twitter)" target="_blank" rel="noopener">
+        <a href="https://x.com/{{ author.twitter }}" class="pill-item twitter" target="_blank" rel="noopener">
           <i class="fab fa-x-twitter"></i>
         </a>
       {% endif %}
 
       {% if author.linkedin %}
-        <a href="https://www.linkedin.com/in/{{ author.linkedin }}" class="pill-item linkedin" title="LinkedIn" target="_blank" rel="noopener">
+        <a href="https://www.linkedin.com/in/{{ author.linkedin }}" class="pill-item linkedin" target="_blank" rel="noopener">
           <i class="fab fa-linkedin-in"></i>
         </a>
       {% endif %}
 
       {% if author.github %}
-        <a href="https://github.com/{{ author.github }}" class="pill-item github" title="GitHub" target="_blank" rel="noopener">
+        <a href="https://github.com/{{ author.github }}" class="pill-item github" target="_blank" rel="noopener">
           <i class="fab fa-github"></i>
         </a>
       {% endif %}
