@@ -1,149 +1,121 @@
----
----
 
-/*
- * This file controls what is imported from /_sass
- *
- * Note that the files are processed in the order they are imported, so they are partly
-   sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
- */
-
-@import
-    "vendor/breakpoint/breakpoint",
-
-    "themes",
-    "theme/{{ site.site_theme | default: 'default' | append: '_light' }}",
-    "theme/{{ site.site_theme | default: 'default' | append: '_dark' }}",
-
-    "include/mixins",
-    "vendor/susy/susy",
-
-    "layout/reset",
-    "layout/base",
-
-    "include/utilities",
-    "layout/tables",
-    "layout/buttons",
-    "layout/notices",
-    "layout/masthead",
-    "layout/navigation",
-    "layout/footer",
-    "syntax",
-
-    "layout/forms",
-
-    "layout/page",
-    "layout/archive",
-    "layout/sidebar",
-    "layout/json_cv"
-;
-
-/* ==========================================================================
-   CUSTOM OVERRIDES
-   ========================================================================== */
-/* Slim & Compact Footer */
-.page__footer {
-  position: static !important;
-  bottom: auto !important;
-  background-color: #f8f9fa !important; /* Clean light background */
-  color: #6c757d !important;
-  margin-top: 2rem !important;    /* Space above the footer line */
-  padding: 0.75rem 0 !important;   /* Reduced vertical padding (removes extra white space) */
-  border-top: 1px solid #e9ecef !important;
-  text-align: center !important;
+/* 1. Global Page Canvas & Clean Body Text */
+body {
+  background-color: #fafafa !important;
+  color: #1a1a1a !important;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  line-height: 1.65;
 }
 
-.page__footer-copyright {
-  display: block !important;
-  margin: 0 !important;            /* Removes default paragraph margin */
+/* 2. Strip default heavy template sidebar styles */
+.sidebar {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
   padding: 0 !important;
-  font-size: 0.85rem !important;
-  color: #6c757d !important;
+  width: 100% !important;
 }
 
-.page__footer a {
-  color: #495057 !important;
-  text-decoration: underline;
+/* 3. Horizontal Header Layout */
+.modern-profile-header {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  margin-bottom: 2rem;
+  padding-bottom: 1.75rem;
+  border-bottom: 1px solid #eaeaea;
+  flex-wrap: wrap;
 }
 
-html {
-  scroll-behavior: smooth;
+.headshot {
+  width: 130px !important;
+  height: 130px !important;
+  border-radius: 50% !important;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border: 2px solid #ffffff;
 }
 
-h2[id],
-h3[id],
-a[id] {
-  scroll-margin-top: 100px;
-}
-
-/* Custom Profile Block Styling */
-.profile-block {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-  color: #2a2a2a;
-  margin-top: 15px;
-}
-
-.profile-name {
-  font-size: 1.8rem;
-  font-weight: 800;
-  margin: 0 0 6px 0;
-  color: #111;
+.author-name {
+  font-family: "Georgia", Cambria, serif !important;
+  font-size: 2.2rem !important;
+  font-weight: 700 !important;
+  color: #000000 !important;
+  margin: 0 0 4px 0 !important;
+  letter-spacing: -0.5px;
   border-bottom: none !important;
 }
 
-.profile-title, .profile-dept {
-  font-size: 0.95rem;
-  margin: 2px 0;
-  color: #333;
+.author-title {
+  font-size: 1.05rem;
+  color: #333333;
+  margin: 0 0 2px 0;
+  font-weight: 500;
 }
 
-.profile-email {
-  margin: 10px 0 16px 0;
+.author-dept {
+  font-size: 0.95rem;
+  color: #666666;
+  margin: 0 0 10px 0;
+}
+
+/* Monospace Email Display */
+.author-email {
   display: flex;
   align-items: center;
-  gap: 6px;
-  color: #555;
-  font-size: 0.9rem;
+  gap: 8px;
+  margin: 8px 0 14px 0;
+  font-family: "SFMono-Regular", Menlo, Monaco, Consolas, monospace;
+  font-size: 0.85rem;
+  color: #444444;
 }
 
-.profile-email code {
-  font-family: 'Courier New', Courier, monospace;
-  background: none;
-  font-size: 0.9rem;
-  color: #444;
+.author-email i {
+  color: #666666;
 }
 
-/* Button Pills */
-.link-pills {
+/* Modern Card Pills */
+.pill-links {
   display: flex;
   gap: 8px;
   align-items: center;
   flex-wrap: wrap;
-  margin-top: 12px;
 }
 
-.pill-btn {
+.pill-item {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 6px 12px;
-  border: 1px solid #d1d5db;
+  width: 38px;
+  height: 38px;
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
   border-radius: 8px;
-  background-color: #ffffff;
-  color: #333 !important;
+  color: #333333 !important;
   text-decoration: none !important;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
-  transition: all 0.15s ease-in-out;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  transition: all 0.2s ease;
 }
 
-.pill-btn:hover {
-  background-color: #f3f4f6;
-  border-color: #9ca3af;
-  transform: translateY(-1px);
+.pill-item i {
+  font-size: 1.1rem;
 }
 
-.text-pill {
+/* Authentic Icon Colors */
+.pill-item.scholar i { color: #4285f4; }
+.pill-item.linkedin i { color: #0a66c2; }
+.pill-item.twitter i { color: #000000; }
+.pill-item.github i { color: #24292e; }
+
+.pill-item:hover {
+  border-color: #b0b0b0;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.bio-btn {
+  width: auto !important;
+  padding: 0 14px;
   font-weight: 600;
   font-size: 0.85rem;
-  padding: 5px 12px;
 }
