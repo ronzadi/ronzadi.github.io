@@ -65,3 +65,13 @@
   color: #495057 !important;
   text-decoration: underline;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+h2[id],
+h3[id],
+a[id] {
+  scroll-margin-top: 100px;
+}
