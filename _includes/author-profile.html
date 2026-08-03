@@ -4,60 +4,51 @@
   {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
 {% endif %}
 
-<div itemscope itemtype="http://schema.org/Person">
-
-  <div class="author__avatar">
+<div class="modern-profile-header">
+  <div class="avatar-container">
     {% if author.avatar contains "://" %}
-        <img src="{{ author.avatar }}" alt="{{ author.name }}" fetchpriority="high" />
+        <img src="{{ author.avatar }}" alt="{{ author.name }}" class="headshot" />
     {% else %}
-        <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}" fetchpriority="high" />
+        <img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="headshot" alt="{{ author.name }}" />
     {% endif %}
   </div>
 
-  <!-- Custom Sidebar Profile Block -->
-  <div class="profile-block">
-    <h2 class="profile-name">Ron Zadicario</h2>
-    <p class="profile-title">Ph.D. Student</p>
-    <p class="profile-dept">School of Computer Science, Tel Aviv University</p>
+  <div class="meta-container">
+    <h1 class="author-name">Ron Zadicario</h1>
+    <p class="author-title">Ph.D. Student</p>
+    <p class="author-dept">School of Computer Science, Tel Aviv University</p>
 
-    <div class="profile-email">
-      <i class="fas fa-fw fa-envelope"></i>
-      <span class="email-text">ronzadicario [at] mail.tau.ac.il</span>
+    <div class="author-email">
+      <i class="fas fa-envelope"></i>
+      <span>ronzadicario [at] mail.tau.ac.il</span>
     </div>
 
-    <!-- Link Pills with Native Colored Icons -->
-    <div class="link-pills">
-      <!-- Google Scholar -->
+    <div class="pill-links">
       {% if author.googlescholar %}
-        <a href="{{ author.googlescholar }}" class="pill-btn scholar-btn" title="Google Scholar" target="_blank" rel="noopener noreferrer">
+        <a href="{{ author.googlescholar }}" class="pill-item scholar" target="_blank" rel="noopener">
           <i class="ai ai-google-scholar"></i>
         </a>
       {% endif %}
 
-      <!-- X / Twitter -->
       {% if author.twitter %}
-        <a href="https://x.com/{{ author.twitter }}" class="pill-btn x-btn" title="X (Twitter)" target="_blank" rel="noopener noreferrer">
+        <a href="https://x.com/{{ author.twitter }}" class="pill-item twitter" target="_blank" rel="noopener">
           <i class="fab fa-x-twitter"></i>
         </a>
       {% endif %}
 
-      <!-- LinkedIn -->
       {% if author.linkedin %}
-        <a href="https://www.linkedin.com/in/{{ author.linkedin }}" class="pill-btn linkedin-btn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/{{ author.linkedin }}" class="pill-item linkedin" target="_blank" rel="noopener">
           <i class="fab fa-linkedin-in"></i>
         </a>
       {% endif %}
 
-      <!-- GitHub -->
       {% if author.github %}
-        <a href="https://github.com/{{ author.github }}" class="pill-btn github-btn" title="GitHub" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/{{ author.github }}" class="pill-item github" target="_blank" rel="noopener">
           <i class="fab fa-github"></i>
         </a>
       {% endif %}
 
-      <!-- Bio Button -->
-      <a href="#bio" class="pill-btn text-pill">Bio</a>
+      <a href="#bio" class="pill-item bio-btn">Bio</a>
     </div>
   </div>
-
 </div>
