@@ -184,4 +184,20 @@ $(document).ready(function () {
     }
   });
 
+  // Smooth scrolling for internal section links without changing URL
+  $('a[href^="#"]').on('click', function (e) {
+    const target = $(this.hash);
+
+    if (target.length) {
+      e.preventDefault();
+
+      $('html, body').animate(
+        {
+          scrollTop: target.offset().top - scssMastheadHeight
+        },
+        500
+      );
+    }
+  });
+
 });
