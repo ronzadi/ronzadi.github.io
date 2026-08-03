@@ -19,6 +19,41 @@ Ron Zadicario, Tova Milo
 *in VLDB 2026*<br>
 <a href="https://arxiv.org/..." target="_blank">[arXiv]</a>
 
+**Fast and Private Max-Sum Diversification**  
+Ron Zadicario, Tova Milo  
+*in VLDB 2026*<br>
+<a href="https://arxiv.org/..." target="_blank">[arXiv]</a>
+
+
+**Fast and Private Max-Sum Diversification**  
+Ron Zadicario, Tova Milo  
+*in VLDB 2026*<br>
+<a href="https://arxiv.org/..." target="_blank">[arXiv]</a>
+
+
+**Fast and Private Max-Sum Diversification**  
+Ron Zadicario, Tova Milo  
+*in VLDB 2026*<br>
+<a href="https://arxiv.org/..." target="_blank">[arXiv]</a>
+
+
+**Fast and Private Max-Sum Diversification**  
+Ron Zadicario, Tova Milo  
+*in VLDB 2026*<br>
+<a href="https://arxiv.org/..." target="_blank">[arXiv]</a>
+
+
+**Fast and Private Max-Sum Diversification**  
+Ron Zadicario, Tova Milo  
+*in VLDB 2026*<br>
+<a href="https://arxiv.org/..." target="_blank">[arXiv]</a>
+
+
+**Fast and Private Max-Sum Diversification**  
+Ron Zadicario, Tova Milo  
+*in VLDB 2026*<br>
+<a href="https://arxiv.org/..." target="_blank">[arXiv]</a>
+
 
 
 [//]: # ()
