@@ -6,19 +6,32 @@
   <meta name="author" content="Ron Zadicario">
   <title>Ron Zadicario</title>
   <meta name="description" content="Ron Zadicario — CS PhD student at Tel Aviv University. Research in privacy-preserving combinatorial optimization and algorithm design.">
+
+  <!-- Academicons CDN for Academic Logos -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <!-- Google Font: Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
     :root{
-      --accent:#3e6ea3;
-      --accent-dark:#2d5380;
-      --ink:#1b1b1f;
-      --body:#33343a;
-      --muted:#5c5e66;
-      --line:#e7e7ec;
+      /* Colors */
+      --accent:#2563eb;        /* Vibrant modern blue */
+      --accent-dark:#1d4ed8;   /* Hover state */
+      --ink:#0f172a;           /* Dark slate color for headings */
+      --body:#334155;          /* Crisp charcoal reading text */
+      --muted:#64748b;         /* Secondary text */
+      --line:#e2e8f0;          /* Divider lines */
       --bg:#ffffff;
-      --serif:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      --sans:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-      --maxw:800px;
+
+      /* Typography */
+      --serif:"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      --sans:"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+      --maxw:860px;
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
@@ -42,7 +55,7 @@
     /* ---------- profile header layout ---------- */
     .profile-card{
       display:grid;
-      grid-template-columns:190px 1fr;
+      grid-template-columns:220px 1fr;
       gap:28px;
       align-items:center;
       padding:48px 0 32px;
@@ -52,13 +65,18 @@
     }
 
     .portrait{
-      width:100%;
-      max-width:190px;
-      aspect-ratio:1/1;
+      width:215px;
+      height:215px;
       object-fit:cover;
       border-radius:12px;
-      box-shadow:0 8px 20px -8px rgba(0,0,0,.2);
+      box-shadow:0 8px 20px -8px rgba(0,0,0,.18);
       display:block;
+    }
+    @media(max-width:580px){
+      .portrait{
+        height:180px;
+        width:180px;
+      }
     }
 
     .profile-info h1{
@@ -80,16 +98,70 @@
       font-size:0.95em;
       color:var(--muted);
       line-height:1.4;
-      margin-bottom:14px;
+      margin-bottom:16px;
     }
 
-    /* social row & email */
-    .social{display:flex; align-items:center; gap:14px; margin-bottom:12px}
-    .social a{display:inline-flex; align-items:center; color:var(--muted)}
-    .social a:hover{color:var(--accent); text-decoration:none}
-    .social svg{width:20px; height:20px; fill:currentColor}
+    /* ---------- CIRCULAR SOCIAL BADGES ---------- */
+    .social{display:flex; align-items:center; gap:12px; margin-bottom:12px}
+    .social-btn{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      background:#f8f9fa;
+      border:1px solid #eef0f3;
+      box-shadow:0 3px 8px rgba(0, 0, 0, 0.08);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      transition:transform .18s ease, box-shadow .18s ease, background-color .18s;
+      font-size: 21px;
+    }
+    .social-btn:hover{
+      transform:translateY(-2px);
+      box-shadow:0 6px 14px rgba(0, 0, 0, 0.12);
+      background:#ffffff;
+      text-decoration:none;
+    }
+    .social-btn svg{width:21px; height:21px}
 
-    .email-line{font-size:0.9em; color:var(--muted)}
+    /* Icon Colors */
+    .btn-email svg{fill:#d94f3d}
+    .btn-scholar{color:#4285f4}
+    .btn-linkedin svg{fill:#0077b5}
+
+    .btn-email { position: relative; }
+    .email-tooltip {
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + 10px);
+      transform: translateX(-50%);
+      background: #222;
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      white-space: nowrap;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .2s;
+      pointer-events: none;
+      z-index: 1000;
+    }
+    .email-tooltip::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: #222;
+    }
+    .btn-email:hover .email-tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .email-line{font-size:0.9em; color:var(--muted); margin-top:4px}
     .email-line strong{color:var(--ink)}
 
     /* ---------- bio content ---------- */
@@ -100,22 +172,120 @@
     section{padding:26px 0}
     h2{font-family:var(--serif); font-weight:600; font-size:1.35em; color:var(--ink); margin:0 0 18px; padding-bottom:8px; border-bottom:1px solid var(--line)}
 
-    /* list items for awards/teaching */
-    .item-list{list-style:none; margin:0; padding:0; display:flex; flex-direction:column; gap:12px}
-    .item-list li{display:grid; grid-template-columns:96px 1fr; gap:14px; font-size:15.5px}
-    @media(max-width:640px){ .item-list li{grid-template-columns:74px 1fr; gap:10px} }
-    .item-list .year{color:var(--accent); font-weight:500; font-family:var(--serif); font-size:14px; padding-top:1px}
+    /* ---------- PUBLICATIONS (Soft & Elegant Style) ---------- */
+    .pub {
+      padding: 14px 18px;
+      margin-bottom: 12px;
+      background: #fafbfc;
+      border: 1px solid #f1f5f9;
+      border-left: 2px solid #cbd5e1;
+      border-radius: 6px;
+      transition: border-color .2s, background-color .2s;
+    }
+    .pub:hover {
+      border-left-color: var(--accent);
+      background: #ffffff;
+      border-color: #e2e8f0;
+    }
+    .pub .ptitle {
+      font-family: var(--serif);
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 1em;
+      line-height: 1.4;
+    }
+    .pub .pauthors {
+      font-size: 14.5px;
+      color: #334155;
+      margin-top: 3px;
+    }
+    .pub .pvenue {
+      font-size: 12.5px;
+      color: #3b82f6;
+      font-weight: 600;
+      margin-top: 6px;
+      display: inline-block;
+      background: #eff6ff;
+      padding: 1px 8px;
+      border-radius: 4px;
+    }
+    .pub .plinks {
+      font-size: 13px;
+      margin-top: 8px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .pub .plinks a, .pub .plinks button {
+      color: var(--muted);
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 1px 11px;
+      font-weight: 500;
+      font-size: 12px;
+      transition: all .15s ease;
+    }
+    .pub .plinks a:hover, .pub .plinks button:hover {
+      background: var(--accent);
+      color: #ffffff;
+      border-color: var(--accent);
+      text-decoration: none;
+    }
 
-    /* publications */
-    .pub{padding:16px 0; border-top:1px solid var(--line)}
-    .pub:first-of-type{border-top:0; padding-top:0}
-    .pub .ptitle{font-family:var(--serif); font-weight:600; color:var(--ink); font-size:1.02em; line-height:1.3}
-    .pub .pauthors{font-size:14.5px; color:var(--body); margin-top:4px}
-    .pub .pauthors strong{color:var(--ink)}
-    .pub .pvenue{font-size:14.5px; color:var(--muted); font-style:italic; margin-top:2px}
-    .pub .plinks{font-size:14px; margin-top:7px; display:flex; gap:8px; flex-wrap:wrap}
-    .pub .plinks a, .pub .plinks button{color:var(--accent); border:1px solid var(--line); border-radius:6px; padding:2px 9px; background:none; cursor:pointer; font:inherit; font-size:13.5px; transition:.15s}
-    .pub .plinks a:hover, .pub .plinks button:hover{background:var(--accent); color:#fff; border-color:var(--accent); text-decoration:none}
+    /* ---------- AWARDS & TEACHING LIST (Year First Grid) ---------- */
+    .item-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .item-list li {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 16px;
+      align-items: baseline;
+      padding-bottom: 14px;
+      border-bottom: 1px solid var(--line);
+    }
+    .item-list li:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    @media(max-width: 580px) {
+      .item-list li {
+        grid-template-columns: 90px 1fr;
+        gap: 12px;
+      }
+    }
+    .item-list .year {
+      color: var(--muted);
+      font-size: 14.5px;
+      font-weight: 600;
+      font-family: var(--serif);
+    }
+    .item-list .item-body {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .item-list .item-title {
+      font-weight: 600;
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.3;
+    }
+    .item-list .item-subtitle {
+      font-size: 14.5px;
+      color: var(--body);
+      font-weight: 500;
+    }
+    .item-list .item-meta {
+      font-size: 13.5px;
+      color: var(--muted);
+    }
 
     footer{border-top:1px solid var(--line); margin-top:24px; padding:26px 0 48px; text-align:center; color:var(--muted); font-size:13px}
   </style>
@@ -137,26 +307,36 @@
 
   <!-- ===== Header Profile Card ===== -->
   <div class="profile-card" id="about">
-    <img src="images/profile.jpg" alt="Ron Zadicario" class="portrait">
+    <img src="images/profile.png" alt="Ron Zadicario" class="portrait">
 
     <div class="profile-info">
       <h1>Ron Zadicario</h1>
-      <div class="role">Ph.D. Student</div>
+      <div class="role">PhD Student</div>
       <div class="affiliation">
+        Computer Science<br>
         Tel Aviv University
       </div>
 
+      <!-- Circular Social Badges -->
       <div class="social">
-        <!-- Google Scholar -->
-        <a href="https://scholar.google.com/" target="_blank" rel="noopener" title="Google Scholar" aria-label="Google Scholar">
-          <svg viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l12 9.5 12-9.5L12 0zm0 3.2L19.8 9 12 15.2 4.2 9 12 3.2z"/></svg>
+        <!-- Email -->
+        <a href="#"
+           class="social-btn btn-email"
+           aria-label="Email"
+           onclick="event.preventDefault();navigator.clipboard.writeText(['ronzadicario','mail.tau.ac.il'].join('@'));this.querySelector('.email-tooltip').textContent='Copied!';setTimeout(()=>this.querySelector('.email-tooltip').textContent='Copy email address',1200);">
+          <svg viewBox="0 0 24 24">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+          <span class="email-tooltip">Copy email address</span>
         </a>
-        <!-- GitHub -->
-        <a href="https://github.com/ronzadi" target="_blank" rel="noopener" title="GitHub" aria-label="GitHub">
-          <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.53 2.36 1.09 2.94.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.94 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02a9.5 9.5 0 0 1 5 0c1.91-1.29 2.75-1.02 2.75-1.02.55 1.38.2 2.4.1 2.65.64.7 1.03 1.59 1.03 2.68 0 3.84-2.34 4.69-4.57 4.94.36.31.68.92.68 1.85v2.74c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+
+        <!-- Google Scholar via Academicons -->
+        <a href="https://scholar.google.com/citations?user=BjK8kyMAAAAJ" target="_blank" rel="noopener" class="social-btn btn-scholar" title="Google Scholar" aria-label="Google Scholar">
+          <i class="ai ai-google-scholar"></i>
         </a>
+
         <!-- LinkedIn -->
-        <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener" title="LinkedIn" aria-label="LinkedIn">
+        <a href="https://www.linkedin.com/in/ron-zadicario/" target="_blank" rel="noopener" class="social-btn btn-linkedin" title="LinkedIn" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
         </a>
       </div>
@@ -171,7 +351,7 @@
   <div class="bio-container">
     <p class="bio">
       Hello! I am a Ph.D. student in the
-      <a href="https://en-exact-sciences.tau.ac.il/computer" target="_blank" rel="noopener">Blavatnik School of Computer Science and AI at Tel Aviv University</a>,
+      <a href="https://en-exact-sciences.tau.ac.il/computer" target="_blank" rel="noopener">Blavatnik School of Computer Science and AI</a> at Tel Aviv University,
       advised by <a href="https://www.cs.tau.ac.il/~milo/" target="_blank" rel="noopener">Prof. Tova Milo</a>.
     </p>
     <p class="bio">
@@ -179,7 +359,7 @@
     </p>
     <p class="bio">
       Previously, I completed my M.Sc. in Computer Science at Tel Aviv University under the supervision of
-      <a href="https://www.cs.tau.ac.il/~amnon/" target="_blank" rel="noopener">Prof. Amnon Ta-Shma</a>, where I worked on pseudorandomness.
+      <a href="https://www.cs.tau.ac.il/~amnon/" target="_blank" rel="noopener">Prof. Amnon Ta-Shma</a>. My research was in pseudorandomness.
     </p>
   </div>
 
@@ -187,23 +367,113 @@
   <section id="publications">
     <h2>Publications</h2>
 
+    <!-- Pub 1 -->
     <div class="pub">
-      <div>
-        <div class="ptitle">Fast and Private Max-Sum Diversification</div>
-        <div class="pauthors"><strong>Ron Zadicario</strong>, Tova Milo</div>
-        <div class="pvenue">VLDB 2026</div>
-        <div class="plinks">
-          <a href="#" target="_blank" rel="noopener">arXiv</a>
-        </div>
+      <div class="ptitle">Fast and Private Max-Sum Diversification</div>
+      <div class="pauthors">Ron Zadicario, Tova Milo</div>
+      <div class="pvenue">VLDB 2026</div>
+      <div class="plinks">
+        <a href="#" target="_blank" rel="noopener">arXiv</a>
+      </div>
+    </div>
+
+    <!-- Pub 2 -->
+    <div class="pub">
+      <div class="ptitle">Differentially Private Submodular Maximization with a Knapsack Constraint</div>
+      <div class="pauthors">Ron Zadicario, Tova Milo</div>
+      <div class="pvenue">ICML 2026</div>
+      <div class="plinks">
+        <a href="#" target="_blank" rel="noopener">arXiv</a>
+      </div>
+    </div>
+
+    <!-- Pub 3 -->
+    <div class="pub">
+      <div class="ptitle">Differentially Private Explanations for Clusters</div>
+      <div class="pauthors">Amir Gilad, Kathy Razmadze, Tova Milo, Ron Zadicario</div>
+      <div class="pvenue">SIGMOD 2026</div>
+      <div class="plinks">
+        <a href="#" target="_blank" rel="noopener">arXiv</a>
+      </div>
+    </div>
+
+    <!-- Pub 4 -->
+    <div class="pub">
+      <div class="ptitle">Demonstration of DPClustX: Differentially Private Explanations for Clusters</div>
+      <div class="pauthors">Amir Gilad, Kathy Razmadze, Tova Milo, Ron Zadicario</div>
+      <div class="pvenue">SIGMOD 2025</div>
+      <div class="plinks">
+        <a href="#" target="_blank" rel="noopener">arXiv</a>
+      </div>
+    </div>
+
+    <!-- Pub 5 -->
+    <div class="pub">
+      <div class="ptitle">The Expander Hitting Property When the Sets Are Arbitrarily Unbalanced</div>
+      <div class="pauthors">Amnon Ta-Shma, Ron Zadicario</div>
+      <div class="pvenue">RANDOM 2024</div>
+      <div class="plinks">
+        <a href="#" target="_blank" rel="noopener">arXiv</a>
+      </div>
+    </div>
+
+    <!-- Pub 6 -->
+    <div class="pub">
+      <div class="ptitle">System-level crash safe sorting on persistent memory</div>
+      <div class="pauthors">Omri Arad, Yoav Ben-Shimon, Ron Zadicario, Daniel Waddington, Moshik Hershcovitch, Adam Morrison</div>
+      <div class="pvenue">SYSTOR 2022</div>
+      <div class="plinks">
+        <a href="#" target="_blank" rel="noopener">Paper</a>
       </div>
     </div>
   </section>
 
   <!-- ===== Awards ===== -->
   <section id="awards">
-    <h2>Awards & Honors</h2>
+    <h2>Awards</h2>
     <ul class="item-list">
-      <li><span class="year">2026</span><span>Recipient of Award Title / Fellowship Name, Tel Aviv University</span></li>
+      <li>
+        <span class="year">2026</span>
+        <div class="item-body">
+          <span class="item-title">TAD Barel Travel Scholarship</span>
+          <span class="item-meta">The Center for AI and Data Science, Tel Aviv University</span>
+        </div>
+      </li>
+      <li>
+        <span class="year">2024</span>
+        <div class="item-body">
+          <span class="item-title">Award for Excellence in Teaching</span>
+          <span class="item-meta">School of Computer Science, Tel Aviv University</span>
+        </div>
+      </li>
+      <li>
+        <span class="year">2023</span>
+        <div class="item-body">
+          <span class="item-title">Award for Excellence in Teaching</span>
+          <span class="item-meta">Rector’s "Top 100" List, Tel Aviv University</span>
+        </div>
+      </li>
+      <li>
+        <span class="year">2022</span>
+        <div class="item-body">
+          <span class="item-title">Scholarship for Academic Excellence</span>
+          <span class="item-meta">School of Computer Science, Tel Aviv University</span>
+        </div>
+      </li>
+      <li>
+        <span class="year">2022</span>
+        <div class="item-body">
+          <span class="item-title">Best Poster Award</span>
+          <span class="item-meta">SYSTOR 2022</span>
+        </div>
+      </li>
+      <li>
+        <span class="year">2019, 2020</span>
+        <div class="item-body">
+          <span class="item-title">Dean's List</span>
+          <span class="item-meta">Faculty of Exact Sciences, Tel Aviv University</span>
+        </div>
+      </li>
     </ul>
   </section>
 
@@ -211,7 +481,14 @@
   <section id="teaching">
     <h2>Teaching</h2>
     <ul class="item-list">
-      <li><span class="year">2025–2026</span><span>Teaching Assistant, Course Name (Undergraduate / Graduate)</span></li>
+      <li>
+        <span class="year">2023–present</span>
+        <div class="item-body">
+          <span class="item-title">Computational Complexity - 0368.3168</span>
+          <span class="item-subtitle">Head Teaching Assistant</span>
+          <span class="item-meta">Tel Aviv University</span>
+        </div>
+      </li>
     </ul>
   </section>
 
