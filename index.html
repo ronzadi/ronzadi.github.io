@@ -7,26 +7,22 @@
   <title>Ron Zadicario</title>
   <meta name="description" content="Ron Zadicario — CS PhD student at Tel Aviv University. Research in privacy-preserving combinatorial optimization and algorithm design.">
 
-  <!-- Academicons CDN for Academic Logos -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 
-  <!-- Google Font: Plus Jakarta Sans -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      /* Colors */
-      --accent:#2563eb;        /* Vibrant modern blue */
-      --accent-dark:#1d4ed8;   /* Hover state */
-      --ink:#0f172a;           /* Dark slate color for headings */
-      --body:#334155;          /* Crisp charcoal reading text */
-      --muted:#64748b;         /* Secondary text */
-      --line:#e2e8f0;          /* Divider lines */
+      --accent:#2563eb;
+      --accent-dark:#1d4ed8;
+      --ink:#0f172a;
+      --body:#334155;
+      --muted:#64748b;
+      --line:#e2e8f0;
       --bg:#ffffff;
 
-      /* Typography */
       --serif:"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
       --sans:"Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
       --maxw:860px;
@@ -43,7 +39,6 @@
     a{color:var(--accent); text-decoration:none; transition:color .15s}
     a:hover{color:var(--accent-dark); text-decoration:underline}
 
-    /* ---------- top nav ---------- */
     nav{border-bottom:1px solid var(--line); position:sticky; top:0; background:rgba(255,255,255,.9); backdrop-filter:saturate(1.3) blur(8px); z-index:10}
     nav .wrap{display:flex; align-items:center; height:60px; gap:20px}
     nav .brand{font-family:var(--serif); font-weight:600; font-size:18px; color:var(--ink)}
@@ -52,7 +47,6 @@
     nav .navlinks a{color:var(--body)}
     nav .navlinks a:hover{color:var(--accent); text-decoration:none}
 
-    /* ---------- profile header layout ---------- */
     .profile-card{
       display:grid;
       grid-template-columns:220px 1fr;
@@ -101,7 +95,6 @@
       margin-bottom:16px;
     }
 
-    /* ---------- CIRCULAR SOCIAL BADGES ---------- */
     .social{display:flex; align-items:center; gap:12px; margin-bottom:12px}
     .social-btn{
       width:42px;
@@ -124,7 +117,6 @@
     }
     .social-btn svg{width:21px; height:21px}
 
-    /* Icon Colors */
     .btn-email svg{fill:#d94f3d}
     .btn-scholar{color:#4285f4}
     .btn-linkedin svg{fill:#0077b5}
@@ -164,15 +156,12 @@
     .email-line{font-size:0.9em; color:var(--muted); margin-top:4px}
     .email-line strong{color:var(--ink)}
 
-    /* ---------- bio content ---------- */
     .bio-container{padding-top:8px; margin-bottom:20px}
     .bio{margin:0 0 1.2em}
 
-    /* ---------- sections ---------- */
     section{padding:26px 0}
     h2{font-family:var(--serif); font-weight:600; font-size:1.35em; color:var(--ink); margin:0 0 18px; padding-bottom:8px; border-bottom:1px solid var(--line)}
 
-    /* ---------- PUBLICATIONS (Soft & Elegant Style) ---------- */
     .pub {
       padding: 14px 18px;
       margin-bottom: 12px;
@@ -233,7 +222,6 @@
       text-decoration: none;
     }
 
-    /* ---------- AWARDS & TEACHING LIST (Year First Grid) ---------- */
     .item-list {
       list-style: none;
       margin: 0;
@@ -305,7 +293,6 @@
 
 <main class="wrap">
 
-  <!-- ===== Header Profile Card ===== -->
   <div class="profile-card" id="about">
     <img src="images/profile.png" alt="Ron Zadicario" class="portrait">
 
@@ -317,9 +304,7 @@
         Tel Aviv University
       </div>
 
-      <!-- Circular Social Badges -->
       <div class="social">
-        <!-- Email -->
         <a href="#"
            class="social-btn btn-email"
            aria-label="Email"
@@ -330,12 +315,10 @@
           <span class="email-tooltip">Copy email address</span>
         </a>
 
-        <!-- Google Scholar via Academicons -->
         <a href="https://scholar.google.com/citations?user=BjK8kyMAAAAJ" target="_blank" rel="noopener" class="social-btn btn-scholar" title="Google Scholar" aria-label="Google Scholar">
           <i class="ai ai-google-scholar"></i>
         </a>
 
-        <!-- LinkedIn -->
         <a href="https://www.linkedin.com/in/ron-zadicario/" target="_blank" rel="noopener" class="social-btn btn-linkedin" title="LinkedIn" aria-label="LinkedIn">
           <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
         </a>
@@ -347,7 +330,6 @@
     </div>
   </div>
 
-  <!-- ===== Bio Body Text ===== -->
   <div class="bio-container">
     <p class="bio">
       Hello! I am a Ph.D. student in the
@@ -363,72 +345,65 @@
     </p>
   </div>
 
-  <!-- ===== Publications ===== -->
   <section id="publications">
     <h2>Publications</h2>
 
-    <!-- Pub 1 -->
     <div class="pub">
       <div class="ptitle">Fast and Private Max-Sum Diversification</div>
       <div class="pauthors">Ron Zadicario, Tova Milo</div>
       <div class="pvenue">VLDB 2026</div>
       <div class="plinks">
-        <a href="#" target="_blank" rel="noopener">arXiv</a>
+        <a href="https://arxiv.org/abs/2607.17196" target="_blank" rel="noopener">arXiv</a>
       </div>
     </div>
 
-    <!-- Pub 2 -->
     <div class="pub">
       <div class="ptitle">Differentially Private Submodular Maximization with a Knapsack Constraint</div>
       <div class="pauthors">Ron Zadicario, Tova Milo</div>
       <div class="pvenue">ICML 2026</div>
       <div class="plinks">
-        <a href="#" target="_blank" rel="noopener">arXiv</a>
+        <a href="https://arxiv.org/abs/2606.14951" target="_blank" rel="noopener">arXiv</a>
+        <a href="https://www.youtube.com/watch?v=_E7l2dUrm_s" target="_blank" rel="noopener">Video (5 min)</a>
       </div>
     </div>
 
-    <!-- Pub 3 -->
     <div class="pub">
       <div class="ptitle">Differentially Private Explanations for Clusters</div>
       <div class="pauthors">Amir Gilad, Kathy Razmadze, Tova Milo, Ron Zadicario</div>
       <div class="pvenue">SIGMOD 2026</div>
       <div class="plinks">
-        <a href="#" target="_blank" rel="noopener">arXiv</a>
+        <a href="https://arxiv.org/abs/2506.05900" target="_blank" rel="noopener">arXiv</a>
       </div>
     </div>
 
-    <!-- Pub 4 -->
     <div class="pub">
       <div class="ptitle">Demonstration of DPClustX: Differentially Private Explanations for Clusters</div>
       <div class="pauthors">Amir Gilad, Kathy Razmadze, Tova Milo, Ron Zadicario</div>
       <div class="pvenue">SIGMOD 2025</div>
       <div class="plinks">
-        <a href="#" target="_blank" rel="noopener">arXiv</a>
+        <a href="https://dl.acm.org/doi/10.1145/3722212.3725102" target="_blank" rel="noopener">Paper</a>
       </div>
     </div>
 
-    <!-- Pub 5 -->
     <div class="pub">
       <div class="ptitle">The Expander Hitting Property When the Sets Are Arbitrarily Unbalanced</div>
       <div class="pauthors">Amnon Ta-Shma, Ron Zadicario</div>
       <div class="pvenue">RANDOM 2024</div>
       <div class="plinks">
-        <a href="#" target="_blank" rel="noopener">arXiv</a>
+        <a href="https://drops.dagstuhl.de/storage/00lipics/lipics-vol317-approx-random2024/LIPIcs.APPROX-RANDOM.2024.31/LIPIcs.APPROX-RANDOM.2024.31.pdf" target="_blank" rel="noopener">Paper</a>
       </div>
     </div>
 
-    <!-- Pub 6 -->
     <div class="pub">
       <div class="ptitle">System-level crash safe sorting on persistent memory</div>
       <div class="pauthors">Omri Arad, Yoav Ben-Shimon, Ron Zadicario, Daniel Waddington, Moshik Hershcovitch, Adam Morrison</div>
       <div class="pvenue">SYSTOR 2022</div>
       <div class="plinks">
-        <a href="#" target="_blank" rel="noopener">Paper</a>
+        <a href="https://dl.acm.org/doi/10.1145/3534056.3535008" target="_blank" rel="noopener">Paper</a>
       </div>
     </div>
   </section>
 
-  <!-- ===== Awards ===== -->
   <section id="awards">
     <h2>Awards</h2>
     <ul class="item-list">
@@ -477,7 +452,6 @@
     </ul>
   </section>
 
-  <!-- ===== Teaching ===== -->
   <section id="teaching">
     <h2>Teaching</h2>
     <ul class="item-list">
